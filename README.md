@@ -14,10 +14,17 @@ The returned request object should be accepted as input for your cloud function.
 
 See this in action below.
 
+## Including in requirements.txt
+You can add this package to your requirements.txt using the following syntax:
+
+`git+git://github.com/vaughnmuirhead/pycftest@v0.2#egg=pycftest`
+
 
 ## Simple unit test example
-`import unittest
-import CFtest as cftest
+
+```
+import unittest
+from pycftest import CFtest as cft
 import main
 
 
@@ -25,11 +32,11 @@ class TestMain(unittest.TestCase):
 
     def test_hello_world(self):
         payload = {}
-        request = cftest.GetRequest(payload)
+        request = cft.GetRequest(payload)
         response = main.hello_world(request)
         self.assertIsNotNone(response)
 
 
 if __name__ == '__main__':
     unittest.main()
-`
+```
