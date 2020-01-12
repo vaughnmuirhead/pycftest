@@ -15,7 +15,7 @@ class GetRequest():
     def get_json(self):
         message = 'Getting json...'
         logger.info(message)
-        js = json.dumps(self.payload_dict)
+        js = self.payload_dict
         message = 'Returning json.'
         logger.info(message)
         return(js)
