@@ -17,7 +17,7 @@ See this in action below.
 ## Including in requirements.txt
 You can add this package to your requirements.txt using the following syntax:
 
-`git+git://github.com/vaughnmuirhead/pycftest@v0.2#egg=pycftest`
+`git+git://github.com/vaughnmuirhead/pycftest@v0.3#egg=pycftest`
 
 
 ## Simple unit test example
