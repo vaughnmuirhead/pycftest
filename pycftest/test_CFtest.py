@@ -13,6 +13,7 @@ class TestMain(unittest.TestCase):
         req = cft.GetRequest(payload_dict)
         args = req.get_json()
         self.assertIn('key', args)
+        self.assertEqual('value', args.get('key'))
 
     def test_get_headers(self):
         payload_dict = {"key": "value"}
@@ -20,6 +21,7 @@ class TestMain(unittest.TestCase):
         req = cft.GetRequest(payload_dict=payload_dict, header_dict=header_dict)
         headers = req.headers
         self.assertIn('headerKey', headers)
+        self.assertEqual(header_dict['headerKey'], headers.get('headerKey'))
 
 if __name__ == '__main__':
     unittest.main()
