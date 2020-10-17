@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pycftest",
-    version="0.5",
+    version="0.6",
     author="Vaughn Muirhead",
     author_email="vaughn.muirhead@gmail.com",
     description="A package to assist with writing unit tests for Google Cloud Functions written in python.",
