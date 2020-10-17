@@ -18,10 +18,20 @@ class TestMain(unittest.TestCase):
     def test_get_headers(self):
         payload_dict = {"key": "value"}
         header_dict = {"headerKey": "headerValue"}
-        req = cft.GetRequest(payload_dict=payload_dict, header_dict=header_dict)
+        method = 'POST'
+        req = cft.GetRequest(payload_dict=payload_dict, method=method, header_dict=header_dict)
         headers = req.headers
         self.assertIn('headerKey', headers)
         self.assertEqual(header_dict['headerKey'], headers.get('headerKey'))
+
+    def test_get_method(self):
+        logger.info('Testing get_method...')
+        payload_dict = {"key": "value"}
+        header_dict = {"headerKey": "headerValue"}
+        method = 'POST'
+        req = cft.GetRequest(payload_dict=payload_dict, method=method, header_dict=header_dict)
+        method = req.method
+        self.assertEqual('POST', req.method)  
 
 if __name__ == '__main__':
     unittest.main()
